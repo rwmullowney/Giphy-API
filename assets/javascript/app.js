@@ -1,9 +1,12 @@
 // Array of topics we'll use to create buttons
 var topics = ['dogs', 'cats', 'parakeets']
 
-var queryURL = "https://api.giphy.com/v1/gifs/search?api_key=YcMY50f8vA1dUzRPHD7e9oQ3eiOBNXv0&q=cats&limit=5";
 
-$("#cat-button").on('click', function(){
+
+$("button").on('click', function(){
+    var animal = $(this).attr("data-animal")
+    var queryURL = "https://api.giphy.com/v1/gifs/search?api_key=YcMY50f8vA1dUzRPHD7e9oQ3eiOBNXv0&q=" + animal + "&limit=5";
+
     $.get(queryURL)
     .then(function(response){
 
