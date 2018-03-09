@@ -21,6 +21,10 @@
     // Takes user input and creates a button
     $("#submit").on('click', function () {
 
+        // Only runs function if there is content in the input field
+        if ($("#userInput").val() != ''){
+
+
         // Assign the user's input to a variable
         var userInput = $("#userInput").val().trim();
         topics.push(userInput);
@@ -29,8 +33,11 @@
 
         // Resets text field
         $("#userInput").val('');
+    }
     })
+    
 
+    // Runs submit when 'enter' key pressed
     $("#userInput").keyup(function (event) {
         if (event.keyCode === 13) {
             $("#submit").click();
