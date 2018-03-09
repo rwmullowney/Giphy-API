@@ -12,7 +12,7 @@
         $("#buttons").empty();
 
         for (var i = 0; i < topics.length; i++) {
-            var gifButton = "<button class='gif-button'>" + topics[i] + "</button>"
+            var gifButton = "<button class='btn btn-secondary gif-button'>" + topics[i] + "</button>"
             $("#buttons").append(gifButton)
         }
     }

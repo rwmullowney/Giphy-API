@@ -4,12 +4,25 @@
     background-repeat: repeat-x repeat-y;
 }
 
-body {
-    color: white;
-}
 
 
 /* Header */
 .bottom-border {
     border-bottom: 3px solid black;
+}
+
+button {
+    margin-right: 7px;
+}
+
+/* Main body */
+.main-body{
+    margin-left: 70px;
+    margin-right: 70px;
+}
+
+
+/* General page styling */
+body {
+    color: white;
 }
