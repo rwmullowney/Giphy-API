@@ -26,7 +26,7 @@
         topics.push(userInput);
 
         generateButtons();
-        
+
         // Resets text field
         $("#userInput").val('');
     })
@@ -36,8 +36,6 @@
             $("#submit").click();
         }
     });
-
-
 
 
     // Establishes the function for when a button is clicked (and adds an event listener for the '.gifbutton' class to the entire document)
@@ -65,12 +63,17 @@
                     var gifDiv = $("<div>")
 
                     // Assigns the gif's still URL to a variable
-                    var imageURL = response.data[i].images.original_still.url;
+                    var gifURL = response.data[i].images.original.url;
+                    var stillURL = response.data[i].images.original_still.url;
 
                     // Builds the img tag to be added to the page
                     var animalImage = $("<img>");
-                    animalImage.attr("src", imageURL);
-                    animalImage.attr("alt", animal + 'gif');
+                    animalImage.attr("src", stillURL);
+                    animalImage.attr("alt", animal + ' gif');
+                    animalImage.attr("data-still", stillURL);
+                    animalImage.attr("data-animate", gifURL);
+                    animalImage.attr("data-state", "still");
+                    animalImage.addClass("gif");
 
                     gifDiv.append(animalImage);
                     // Appends paragraph tag with gif rating to div
@@ -80,6 +83,23 @@
                 }
             })
     })
+
+
+    // Click function to start or stop a gif
+    $(document).on("click", ".gif", function() {
+        // The attr jQuery method allows us to get or set the value of any attribute on our HTML element
+        var state = $(this).attr("data-state");
+        // If the clicked image's state is still, update its src attribute to what its data-animate value is.
+        // Then, set the image's data-state to animate
+        // Else set src to the data-still value
+        if (state === "still") {
+          $(this).attr("src", $(this).attr("data-animate"));
+          $(this).attr("data-state", "animate");
+        } else {
+          $(this).attr("src", $(this).attr("data-still"));
+          $(this).attr("data-state", "still");
+        }
+      });
 
     // Generates buttons upon page launch
     generateButtons();
