@@ -47,7 +47,7 @@
         var animal = $(this).text();
 
         // Build the Giphy API query from the name of the button clicked
-        var queryURL = "https://api.giphy.com/v1/gifs/search?api_key=YcMY50f8vA1dUzRPHD7e9oQ3eiOBNXv0&q=" + animal + "&limit=" + limit;
+        var queryURL = "https://api.giphy.com/v1/gifs/search?api_key=YcMY50f8vA1dUzRPHD7e9oQ3eiOBNXv0&q=" + animal + "&limit=" + limit + "&rating=pg";
 
         // Clear the gifs currently there
         $("#gifs").empty();
