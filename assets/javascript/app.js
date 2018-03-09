@@ -1,6 +1,9 @@
 // Array of topics we'll use to create buttons
 var topics = ['Dogs', 'Cats', 'Parakeets']
 
+    // Assigns a variable to limit the number of gifs
+    var limit = 10
+
 // Generates buttons based on the array
 for (var i = 0; i < topics.length; i++) {
     var gifButton = "<button>" + topics[i] + "</button>"
@@ -10,13 +13,22 @@ for (var i = 0; i < topics.length; i++) {
 
 // Takes user input and creates a button
 $("#submit").on('click', function () {
+    
     // Assign the user's input to a variable
     var userInput = $("#userInput").val();
-    $("#userInput").empty(); // Doesn't work
-    console.log(userInput);
+    
+    // Resets text field
+    $("#userInput").val('');
+    
     var gifButton = "<button>" + userInput + "</button>"
     $("#buttons").append(gifButton);
 })
+
+$("#userInput").keyup(function(event) {
+    if (event.keyCode === 13) {
+        $("#submit").click();
+    }
+});
 
 
 
@@ -24,8 +36,7 @@ $("#submit").on('click', function () {
 // Establishes the function for when a button is clicked
 $("button").on('click', function () {
 
-    // Assigns a variable to limit the number of gifs
-    var limit = 10
+
 
     // Assigns the animal to be searched in the Giphy API based on the name of the button clicked
     var animal = $(this).text();
