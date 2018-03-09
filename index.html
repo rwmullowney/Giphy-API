@@ -14,17 +14,30 @@
 
 
 
-<body>
-    <h1>Giphy Gifs</h1>
+<body class="background-pattern">
 
-    <input type="text" placeholder="Enter your animal here" size="32" id="userInput">
-    <input value="Submit" type="submit" id="submit">
 
-    <h3>Buttons go here</h3>
-    <div id="buttons"></div>
+    <!-- Header -->
+    <div class="container bottom-border">
+        <div class="row justify-content-center">
+            <h1>Giphy Gifs</h1>
+        </div>
+        <div class="row">
+            <div class="col-4">
+                <input type="text" placeholder="Enter your animal here" size="32" id="userInput">
+                <input value="Submit" type="submit" id="submit">
+            </div>
 
-    <h3>Gifs go here</h3>
-    <div id="gifs"></div>
+            <div class="col-8">
+                <div id="buttons"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main body -->
+    <div class="container d-inline-flex">
+        <div id="gifs"></div>
+    </div>
 </body>
 
 

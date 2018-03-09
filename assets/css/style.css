@@ -1,0 +1,15 @@
+/* Background Image */
+.background-pattern {
+    background-image: url(../images/footer_lodyas.png);
+    background-repeat: repeat-x repeat-y;
+}
+
+body {
+    color: white;
+}
+
+
+/* Header */
+.bottom-border {
+    border-bottom: 3px solid black;
+}
