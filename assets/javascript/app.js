@@ -1,7 +1,7 @@
 (function () {
 
     // Array of topics we'll use to create buttons
-    var topics = ['Dogs', 'Cats', 'Parakeets']
+    var topics = ['Batman', 'Superman', 'Thor']
 
     // Assigns a variable to limit the number of gifs
     var limit = 10
@@ -50,11 +50,11 @@
 
 
 
-        // Assigns the animal to be searched in the Giphy API based on the name of the button clicked
-        var animal = $(this).text();
+        // Assigns the gif topic to be searched in the Giphy API based on the name of the button clicked
+        var search = $(this).text();
 
         // Build the Giphy API query from the name of the button clicked
-        var queryURL = "https://api.giphy.com/v1/gifs/search?api_key=YcMY50f8vA1dUzRPHD7e9oQ3eiOBNXv0&q=" + animal + "&limit=" + limit + "&rating=pg";
+        var queryURL = "https://api.giphy.com/v1/gifs/search?api_key=YcMY50f8vA1dUzRPHD7e9oQ3eiOBNXv0&q=" + search + "&limit=" + limit + "&rating=pg";
 
         // Clear the gifs currently there
         $("#gifs").empty();
@@ -74,15 +74,15 @@
                     var stillURL = response.data[i].images.original_still.url;
 
                     // Builds the img tag to be added to the page
-                    var animalImage = $("<img>");
-                    animalImage.attr("src", stillURL);
-                    animalImage.attr("alt", animal + ' gif');
-                    animalImage.attr("data-still", stillURL);
-                    animalImage.attr("data-animate", gifURL);
-                    animalImage.attr("data-state", "still");
-                    animalImage.addClass("gif");
+                    var heroImage = $("<img>");
+                    heroImage.attr("src", stillURL);
+                    heroImage.attr("alt", search + ' gif');
+                    heroImage.attr("data-still", stillURL);
+                    heroImage.attr("data-animate", gifURL);
+                    heroImage.attr("data-state", "still");
+                    heroImage.addClass("gif");
 
-                    gifDiv.append(animalImage);
+                    gifDiv.append(heroImage);
                     // Appends paragraph tag with gif rating to div
                     gifDiv.append($("<p>").text("Rating: " + response.data[i].rating))
 
