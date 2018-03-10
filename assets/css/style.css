@@ -1,12 +1,12 @@
 /* Background Image */
-.background-pattern {
+
+/* .background-pattern {
     background-image: url(../images/footer_lodyas.png);
     background-repeat: repeat-x repeat-y;
-}
-
-
+} */
 
 /* Header */
+
 .bottom-border {
     border-bottom: 3px solid darkred;
 }
@@ -15,19 +15,21 @@ button {
     margin-right: 7px;
 }
 
-h1{
+h1 {
     font-family: 'avengers';
     font-size: 48px;
+    
 }
 
 /* Main body */
+
 /* .main-body{
     margin-left: 70px;
     margin-right: 70px;
 } */
 
-
 /* General page styling */
+
 @font-face {
     font-family: 'avengers';
     src: url(../font/avengers.otf) format('opentype');
@@ -35,4 +37,9 @@ h1{
 
 body {
     color: white;
+    width: 100%;
+    height: 100%;
+    background: url(../images/batman.jpg) center center no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
 }
