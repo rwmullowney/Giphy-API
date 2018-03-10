@@ -12,7 +12,7 @@
         $("#buttons").empty();
 
         for (var i = 0; i < topics.length; i++) {
-            var gifButton = "<button class='btn btn-secondary gif-button'>" + topics[i] + "</button>"
+            var gifButton = "<button class='btn btn-primary gif-button'>" + topics[i] + "</button>"
             $("#buttons").append(gifButton)
         }
     }
@@ -22,20 +22,20 @@
     $("#submit").on('click', function () {
 
         // Only runs function if there is content in the input field
-        if ($("#userInput").val() != ''){
+        if ($("#userInput").val() != '') {
 
 
-        // Assign the user's input to a variable
-        var userInput = $("#userInput").val().trim();
-        topics.push(userInput);
+            // Assign the user's input to a variable
+            var userInput = $("#userInput").val().trim();
+            topics.push(userInput);
 
-        generateButtons();
+            generateButtons();
 
-        // Resets text field
-        $("#userInput").val('');
-    }
+            // Resets text field
+            $("#userInput").val('');
+        }
     })
-    
+
 
     // Runs submit when 'enter' key pressed
     $("#userInput").keyup(function (event) {
@@ -93,20 +93,20 @@
 
 
     // Click function to start or stop a gif
-    $(document).on("click", ".gif", function() {
+    $(document).on("click", ".gif", function () {
         // The attr jQuery method allows us to get or set the value of any attribute on our HTML element
         var state = $(this).attr("data-state");
         // If the clicked image's state is still, update its src attribute to what its data-animate value is.
         // Then, set the image's data-state to animate
         // Else set src to the data-still value
         if (state === "still") {
-          $(this).attr("src", $(this).attr("data-animate"));
-          $(this).attr("data-state", "animate");
+            $(this).attr("src", $(this).attr("data-animate"));
+            $(this).attr("data-state", "animate");
         } else {
-          $(this).attr("src", $(this).attr("data-still"));
-          $(this).attr("data-state", "still");
+            $(this).attr("src", $(this).attr("data-still"));
+            $(this).attr("data-state", "still");
         }
-      });
+    });
 
     // Generates buttons upon page launch
     generateButtons();

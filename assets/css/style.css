@@ -8,11 +8,16 @@
 
 /* Header */
 .bottom-border {
-    border-bottom: 3px solid black;
+    border-bottom: 3px solid darkred;
 }
 
 button {
     margin-right: 7px;
+}
+
+h1{
+    font-family: 'avengers';
+    font-size: 48px;
 }
 
 /* Main body */
@@ -23,6 +28,11 @@ button {
 
 
 /* General page styling */
+@font-face {
+    font-family: 'avengers';
+    src: url(../font/avengers.otf) format('opentype');
+}
+
 body {
     color: white;
 }
