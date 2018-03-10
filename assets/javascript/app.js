@@ -67,7 +67,7 @@
                 for (var i = 0; i < limit; i++) {
 
                     // Creates the div for us to store our rating & gif
-                    var gifDiv = $("<div>")
+                    var gifDiv = $("<div class='d-inline-block mr-2'>")
 
                     // Assigns the gif's still URL to a variable
                     var gifURL = response.data[i].images.original.url;
@@ -84,7 +84,7 @@
 
                     gifDiv.append(heroImage);
                     // Appends paragraph tag with gif rating to div
-                    gifDiv.append($("<p>").text("Rating: " + response.data[i].rating))
+                    gifDiv.append($("<p class='text-center'>").text("Rating: " + response.data[i].rating))
 
                     $("#gifs").prepend(gifDiv)
                 }
